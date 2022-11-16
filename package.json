@@ -1,0 +1,22 @@
+{
+  "name": "build-week-2-e-commerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerdiley/Build-week-2-E-commerce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gerdiley/Build-week-2-E-commerce/issues"
+  },
+  "homepage": "https://github.com/gerdiley/Build-week-2-E-commerce#readme",
+  "dependencies": {
+    "json-server": "^0.17.1"
+  }
+}

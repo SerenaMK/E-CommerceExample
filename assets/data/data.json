@@ -1,0 +1,77 @@
+{
+  "users": [
+    {
+      "firstname": "Gerardo",
+      "surname": "Di Letizia",
+      "email": "gerardodiletizia@gmail.com",
+      "user": "gerardodiletizia",
+      "password": "9999",
+      "id": 1
+    },
+    {
+      "firstname": "Angelo",
+      "surname": "Midolo",
+      "email": "angelomidolo@gmail.com",
+      "user": "angelomidolo",
+      "password": "9999",
+      "id": 2
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "Fender Stratocaster",
+      "price": 2000,
+      "description": "Fender American Vintage II 1957 Stratocaster; electric guitar; body: Ash; neck: 1-Piece Maple; fingerboard: Maple; neck shape: 1957",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/548645/17480122_800.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Fender Telecaster",
+      "price": 700,
+      "description": "Body: Alder, Maple neck, Fretboard: Maple, Matte neck finish",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/439170/13994796_800.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Gibson Les Paul",
+      "price": 2300,
+      "description": "Body: Mahogany, Cream-colored body binding, Top: Maple, Neck: Mahogany",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/462505/14249288_800.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Gretch Electromatic",
+      "price": 900,
+      "description": "Construction: Hollowbody with double cut, Body: Maple laminated with trestle block, Body depth: 57 mm (2.25) , Neck: Maple, Fretboard: Laurel",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/535960/17205238_800.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Yamaha Piano",
+      "price": 60000,
+      "description": "88 Keys, 3 Pedals (centre pedal: single-note sustain pedal), Length: 212 cm, Width: 154 cm, Height: 102 cm, Weight: 433 kg",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/536581/16971395_800.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Kawai Piano",
+      "price": 9000,
+      "description": "Kawai K-300 AURES 2 E/P - piano with AURES 2 system, 88 keys, 3 pedals. exclusive Millennium III Upright Action with ABS-Carbon Composites, double delted hammers, Kawai headphone SH-9 included, Mahogany Core Hammers, dimensions: 122 x 149 x 61 cm. Weight: 227kg",
+      "image": "https://th.static-thomann.de/thumb/padthumb600x600/pics/bdb/523281/16822513_800.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Piano",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/536581/16971395_800.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Guitars",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/535960/17205238_800.jpg"
+    }
+  ],
+  "cart": []
+}
