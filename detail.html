@@ -76,10 +76,14 @@
         </div>
         <div class="offcanvas-body">
             <form>
-                <label for="nome" class="mt-2 fw-semibold">EMAIL</label>
-                <input type="email" class="form-control" id="email" placeholder="nome@email.com">
-                <label for="nome" class="mt-2 fw-semibold">PASSWORD</label>
+                <label for="username" class="mt-2 fw-semibold">USERNAME</label>
+                <input type="text" class="form-control" id="username" placeholder="Username or your email">
+                <p id="errUser" class="text-success"></p>
+
+                <label for="password" class="mt-2 fw-semibold">PASSWORD</label>
                 <input type="password" class="form-control" id="password" placeholder="Password">
+                <p id="errPass" class="text-danger"></p>
+
                 <button type="button" class="btn btn-primary mt-2" id="btnIn">SIGN IN</button>
             </form>
             <br>
