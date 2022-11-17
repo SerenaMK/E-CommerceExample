@@ -24,12 +24,20 @@
             <a class="navbar-brand order-lg-1" href="index.html">E-commerce</a>
             <div class="d-lg-flex justify-content-end order-lg-3">
                 <div class="d-inline">
-                    <button class="btn"><i class="bi bi-person-circle text-white"></i></button>
-                    <!-- CART ICON -->
-                    <button class="btn">                        
-                        <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#cartOff" href="#cartOff"><i
-                                class="bi bi-cart text-white"></i></a>
+
+                    <!-- USER ICON -->
+                    <button id="userIcon" type="button" class="btn" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true">
+                        <div id="btnName" class="d-none d-sm-inline text-light me-2 fw-bold"></div>
+                        <i class="bi bi-person-circle text-white"></i>
                     </button>
+
+                    <!-- CART ICON -->
+                    <button id="btnCart" type="button" class="btn">
+                        <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#cartOff" href="#cartOff">
+                            <i class="bi bi-cart text-white"></i>
+                        </a>
+                    </button>
+
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,8 +60,7 @@
                             href="#offcanvas" id="navLogin">Log In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-warning d-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            href="#offcanvas" id="navLogout">Log Out</a>
+                        <a class="nav-link text-warning d-none" id="navLogout">Log Out</a>
                     </li>
                 </ul>
             </div>
