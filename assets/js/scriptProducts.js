@@ -7,11 +7,9 @@ var url = window.location.href;
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    cards = document.getElementById("cards");
+    cards = document.getElementById("productCards");
     printData();
 }
-
-
 
 function printData() {
     fetch("http://localhost:3000/articles")
@@ -23,12 +21,13 @@ function printData() {
             if (list.length > 0) {
                 cards.innerHTML = '';
                 list.map(function (element) {
-                    cards.innerHTML += `<div class="card m-1" onclick="location.href='detail.html?id=${element.id}'">
-                    <img src="${element.image}" class="card-img-top p-2">
-                    <div class="card-body">
-                        <h5 class="card-title">${element.title}</h5>
-                    </div>
-                </div>`
+                    cards.innerHTML += `
+                    <div class="card border border-white" onclick="location.href='detail.html?id=${element.id}'">
+                        <img src="${element.image}" class="card-img-top p-2">
+                        <div class="card-body">
+                            <h5 class="card-title">${element.title}</h5>
+                        </div>
+                    </div>`
                 });
             }
         });

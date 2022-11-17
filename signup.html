@@ -39,19 +39,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            href="#offcanvas">Log In</a>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
 
-    <div class="container-lg py-5 mt-3">
-        <h2>Registration Form</h2>
-        <div class="row mt-5">
+    <div class="container-lg py-5 mt-5">
+        <div class="row">
+            <div class="col-12 border-5 border-start border-primary ms-3">
+                <h2>Register</h2>
+            </div>
+        </div>
+        <div class="row">
             <div class="col p-3 mt-2">
                 <form>
                     <label for="name" class="mt-2 fw-semibold">NAME</label>
@@ -76,25 +76,26 @@
         </div>
     </div>
 
-    
+
     <!-- Vertically centered modal -->
     <div class="modal" tabindex="-1" id="myModal">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Registration successfully completed!</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registration successfully completed!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>By clicking the button below you will be redirected to the login page</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='login.html'">Go to
+                        login page</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <p>By clicking the button below you will be redirected to the login page</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" onclick="window.location.href='login.html'">Go to login page</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
     <script src="assets/js/scriptSignup.js"></script>
 </body>

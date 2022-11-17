@@ -15,9 +15,40 @@
       "user": "angelomidolo",
       "password": "Angelo1!",
       "id": 2
+    },
+    {
+      "firstname": "Serena",
+      "surname": "Mude-Koko",
+      "email": "serenamudekoko@gmail.com",
+      "user": "serena",
+      "password": "Serena1!",
+      "id": 3
+    },
+    {
+      "firstname": "Elena",
+      "surname": "Montagnin",
+      "email": "elena@gmail.com",
+      "user": "elenamontagnin",
+      "password": "Serena1!",
+      "id": 4
+    },
+    {
+      "firstname": "Elena",
+      "surname": "Montagnin",
+      "email": "elenamont@gmail.com",
+      "user": "elena",
+      "password": "Serena1!",
+      "id": 5
+    },
+    {
+      "firstname": "Elena",
+      "surname": "Montagnin",
+      "email": "elenam@gmail.com",
+      "user": "elenam",
+      "password": "Serena1!",
+      "id": 6
     }
   ],
-
   "articles": [
     {
       "id": 1,
@@ -68,7 +99,6 @@
       "image": "https://th.static-thomann.de/thumb/padthumb600x600/pics/bdb/523281/16822513_800.jpg"
     }
   ],
-
   "categories": [
     {
       "id": 1,
@@ -81,14 +111,41 @@
       "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/535960/17205238_800.jpg"
     }
   ],
-
   "cart": [
     {
       "id": 1,
+      "idUser": 1,
+      "articles": [
+        5,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 2,
       "idUser": 2,
       "articles": [
-        1, 2, 5
+        1,
+        2,
+        5
       ]
+    },
+    {
+      "idUser": 4,
+      "articles": [
+        1
+      ],
+      "id": 3
+    },
+    {
+      "idUser": 5,
+      "articles": [],
+      "id": 4
+    },
+    {
+      "idUser": 6,
+      "articles": [],
+      "id": 5
     }
   ]
 }

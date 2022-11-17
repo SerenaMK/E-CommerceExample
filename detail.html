@@ -25,7 +25,11 @@
             <div class="d-lg-flex justify-content-end order-lg-3">
                 <div class="d-inline">
                     <button class="btn"><i class="bi bi-person-circle text-white"></i></button>
-                    <button class="btn"><i class="bi bi-cart text-white"></i></button>
+                    <!-- CART ICON -->
+                    <button class="btn">                        
+                        <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#cartOff" href="#cartOff"><i
+                                class="bi bi-cart text-white"></i></a>
+                    </button>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,8 +48,12 @@
                         <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            href="#offcanvas">Log In</a>
+                        <a class="nav-link text-info d-block" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                            href="#offcanvas" id="navLogin">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning d-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                            href="#offcanvas" id="navLogout">Log Out</a>
                     </li>
                 </ul>
             </div>
@@ -53,11 +61,10 @@
     </nav>
 
     <!-- OFFCANVAS LOGIN -->
-
     <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasRight"
         aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">Sign In</h5>
+            <h5 class="offcanvas-title">Sign In</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -74,9 +81,21 @@
         </div>
     </div>
 
+    <!-- OFFCANVAS CART -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOff" aria-labelledby="cartOff">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title h2" id="cartOffLabel">Your cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p id="empty" class="text-secondary ms-3 mb-0 fst-italic fs-5"></p>
+            <ul id="cart" class="list-group"></ul>
+        </div>
+    </div>
+
 
     <!-- PRODUCT -->
-    
+
     <div class="container pt-5">
 
         <div class="row pt-5">
@@ -98,18 +117,19 @@
                     <!-- product details -->
                     <p id="product-detail" class="fs-5 mb-5"></p>
 
-                    <!-- buy button -->
-                    <button type="button" class="btn btn-warning">ADD TO CART</button>
-                    <button type="button" class="btn btn-primary">BUY NOW</button>
+                    <!-- buy buttons -->
+                    <button type="button" class="btn btn-warning" id="addToCart">ADD TO CART</button>
+                    <button type="button" class="btn btn-primary" id="buyNow">BUY NOW</button>
 
                 </div>
             </div>
         </div>
     </div>
 
-
     <!-- SCRIPT -->
     <script src="assets/js/scriptDetail.js"></script>
+    <script src="assets/js/scriptLogin.js"></script>
+    <script src="assets/js/scriptCartAdd.js"></script>
 </body>
 
 </html>

@@ -6,6 +6,29 @@
     background-position: center;
 }
 
-.card {
-    max-width: 24%;
+#productCards > .card {
+    outline: 1px solid #D2D2D2;
+    outline-offset: -3px;
+}
+
+#listCategories {
+    list-style-type: circle;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 576px) {
+    #productCards > .card {
+        width: 33%;
+    }
+}
+@media screen and (min-width: 992px) {
+    #productCards > .card {
+        width: 25%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    #productCards > .card {
+        width: 20%;
+    }
 }

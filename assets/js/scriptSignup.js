@@ -13,9 +13,12 @@ var errEmail;
 var errUser;
 var errPass;
 var outcome = false;
+var newId;
+
+
 //REGEX
 
-var regexName = /^[\s\w]{1,10}$/;
+var regexName = /^[\s\w-]{1,10}$/;
 var regexEmail = /^[\w-._]+@([\w-]+.)+[\w-]{2,5}$/;
 var regexPassword = /^[A-Za-z0-9!#$%&@*?]{8,100}$/;
 var regexUser = /^[\d\w-._]{3,16}$/;
@@ -47,11 +50,11 @@ function eventHandler() {
         validation();
     });
 
-    if (sessionStorage.getItem('registration')) {
-            let myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
-            myModal.show();
-        sessionStorage.removeItem('registration');
-    }
+    // if (sessionStorage.getItem('registration')) {
+    //         let myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
+    //         myModal.show();
+    //     sessionStorage.removeItem('registration');
+    // }
 }
 
 // FUNCTION VALIDATION
@@ -121,8 +124,8 @@ async function existence() {
 
             exist = false;
         })
-        
-    // CREATE OBJECT DATA
+
+    // CREATE USER
     var data = {
         firstname: firstName.value,
         surname: surname.value,
@@ -146,5 +149,44 @@ async function addData(data) {
         }
     ).then(() => {
         sessionStorage.setItem("registration", "true");
+
+        getNewId();
+
+        let myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
+        myModal.show();
     })
+}
+
+async function getNewId() {
+    let response = await fetch("http://localhost:3000/users")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            list = data;
+            list.forEach(user => {
+                if (user.user == username.value) {
+                    newId = user.id;
+                }
+            });
+        })
+
+    // CREATE USER CART
+    var newCart = {
+        idUser: newId,
+        articles: []
+    };
+
+    pushNewCart(newCart);
+}
+
+async function pushNewCart(newCart) {
+
+    let response = await fetch('http://localhost:3000/cart',
+        {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json;charset=utf-8' },
+            body: JSON.stringify(newCart),
+        }
+    )
 }
