@@ -5,3 +5,13 @@
     background-size: cover;
     background-position: center;
 }
+
+#carImg, #carImg1 {
+    max-width: 500px;
+}
+span {
+    color: black;
+}
+footer {
+    height: 100px;
+}
