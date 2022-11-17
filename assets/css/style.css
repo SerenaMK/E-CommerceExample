@@ -5,3 +5,7 @@
     background-size: cover;
     background-position: center;
 }
+
+.card {
+    max-width: 24%;
+}

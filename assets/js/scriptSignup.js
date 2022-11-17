@@ -50,7 +50,7 @@ function eventHandler() {
     if (sessionStorage.getItem('registration')) {
             let myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
             myModal.show();
-        sessionStorage.clear();
+        sessionStorage.removeItem('registration');
     }
 }
 
@@ -117,13 +117,11 @@ async function existence() {
                     exist = true;
                     return;
                 }
-
             });
-            // if (!exist) {
-            //     console.log('username libero')
-            // };
+
             exist = false;
         })
+        
     // CREATE OBJECT DATA
     var data = {
         firstname: firstName.value,
@@ -149,21 +147,4 @@ async function addData(data) {
     ).then(() => {
         sessionStorage.setItem("registration", "true");
     })
-
-    // showModal();
-
 }
-
-// async function showModal() {
-//     let promise = new Promise(function (resolve) {
-//         let myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
-//         myModal.show();
-//     })
-
-// }
-
-
-
-
-
-

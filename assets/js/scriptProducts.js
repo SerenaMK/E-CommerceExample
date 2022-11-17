@@ -23,8 +23,8 @@ function printData() {
             if (list.length > 0) {
                 cards.innerHTML = '';
                 list.map(function (element) {
-                    cards.innerHTML += `<div class="card" onclick="location.href='detail.html?id=${element.id}'">
-                    <img src="${element.image}" class="card-img-top">
+                    cards.innerHTML += `<div class="card m-1" onclick="location.href='detail.html?id=${element.id}'">
+                    <img src="${element.image}" class="card-img-top p-2">
                     <div class="card-body">
                         <h5 class="card-title">${element.title}</h5>
                     </div>

@@ -1,5 +1,6 @@
 var productTitle;
 var productImg;
+var productPrice;
 var productDetail;
 var url = window.location.href;
 
@@ -9,6 +10,7 @@ function init() {
 
     productTitle = document.getElementById('product-title');
     productImg = document.getElementById('product-img');
+    productPrice = document.getElementById('product-price');
     productDetail = document.getElementById('product-detail');
     
     printDetail();
@@ -23,7 +25,8 @@ function printDetail() {
         })
         .then((data) => {
                     productTitle.innerHTML = `${data.title}`;
-                    productImg.innerHTML = `<img src="${data.image}" alt="product image">`;
+                    productImg.innerHTML = `<img src="${data.image}" class="img-fluid" alt="product image">`;
+                    productPrice.innerHTML = `${data.price}&euro;`;
                     productDetail.innerHTML = `${data.description}`;
                 });
         }

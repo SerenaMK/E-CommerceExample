@@ -18,14 +18,18 @@
 <body>
 
     <!-- NAVBAR -->
-    <!-- gerardo -->
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand order-lg-1" href="index.html">E-commerce</a>
             <div class="d-lg-flex justify-content-end order-lg-3">
                 <div class="d-inline">
                     <button class="btn"><i class="bi bi-person-circle text-white"></i></button>
-                    <button class="btn"><i class="bi bi-cart text-white"></i></button>
+                    <button class="btn">
+                        <!-- CART ICON -->
+                        <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#cartOff" href="#cartOff"><i
+                                class="bi bi-cart text-white"></i></a>
+
+                    </button>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,11 +57,10 @@
     </nav>
 
     <!-- OFFCANVAS LOGIN -->
-    <!-- SERENA -->
     <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasRight"
         aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">Sign In</h5>
+            <h5 class="offcanvas-title">Sign In</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -74,9 +77,19 @@
         </div>
     </div>
 
+    <!-- OFFCANVAS CART -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOff" aria-labelledby="cartOff">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="cartOffLabel">Your cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul id="cart"></ul>
+        </div>
+    </div>
+
 
     <!-- BANNER -->
-    <!-- SERENA -->
     <div class="container-fluid py-5" id="banner">
         <div class="row text-light mt-4">
             <div class="col-6 text-center text-danger">
@@ -95,7 +108,7 @@
         <div class="row">
             <div class="col">
                 <div class="card-group mt-3" id="cards">
-                    
+
                 </div>
             </div>
         </div>
@@ -137,6 +150,7 @@
 
 
     <script src="assets/js/scriptIndex.js"></script>
+    <script src="assets/js/scriptLogin.js"></script>
 </body>
 
 </html>

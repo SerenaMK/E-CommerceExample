@@ -38,7 +38,7 @@
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="products.html">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
@@ -76,22 +76,39 @@
 
 
     <!-- PRODUCT -->
-    <!-- title -->
-    <h2 id="product-title" class="mt-5"></h2>
     
-    <div class="container mt-5" id="product-container">
-        <!-- product img -->
-        <div id="product-img"></div>
-        <!-- product details -->
-        <div>
-            <p id="product-detail">
-            
-            </p>
+    <div class="container pt-5">
+
+        <div class="row pt-5">
+
+            <div class="col-md-6">
+                <!-- product img -->
+                <div id="product-img" class="border border-muted p-2"></div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="ps-4">
+
+                    <!-- product title -->
+                    <h1 id="product-title" class="display-2 mb-4 mt-4 mt-md-0"></h1>
+
+                    <!-- product price -->
+                    <p id="product-price" class="display-6 fw-bold mb-md-4"></p>
+
+                    <!-- product details -->
+                    <p id="product-detail" class="fs-5 mb-5"></p>
+
+                    <!-- buy button -->
+                    <button type="button" class="btn btn-warning">ADD TO CART</button>
+                    <button type="button" class="btn btn-primary">BUY NOW</button>
+
+                </div>
+            </div>
         </div>
     </div>
 
 
-
+    <!-- SCRIPT -->
     <script src="assets/js/scriptDetail.js"></script>
 </body>
 
