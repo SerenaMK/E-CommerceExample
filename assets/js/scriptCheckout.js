@@ -4,24 +4,20 @@ var userCart;
 var userId;
 var currentCart = false;
 var content = [];
-var productIdentifier;
 var empty;
 var url = window.location.href;
 var total = 0;
 var cartTotal;
-var addToCart;
 var buyNow;
-var checkout;
 
 // ON LOAD
 window.addEventListener("DOMContentLoaded", initCart);
 
 function initCart() {
-    userCart = document.getElementById('cart');
-    productIdentifier = Number(url.slice((url.indexOf('=') + 1), url.length));
+    userCart = document.getElementById("cart");
     empty = document.getElementById("empty");
     cartTotal = document.getElementById("cartTotal");
-    checkout = document.getElementById("btnCheckout");
+    buyNow = document.getElementById("buyNow");
 
     eventHandlerCart();
 }
@@ -33,16 +29,11 @@ function eventHandlerCart() {
         userId = Number(localStorage.getItem("userId"));
 
         getCart(userId);
-
-        addToCart.addEventListener('click', function () {
-            addProduct();
-        });
-
-        checkout.addEventListener("click", function() {
-            location.href = "checkout.html";
-        })
     }
 
+    buyNow.addEventListener("click", function () {
+        emptyCart();
+    })
 }
 
 // GET USER'S CART
@@ -70,6 +61,8 @@ async function getCart(userId) {
             // If cart is empty
             if (content == "") {
                 empty.innerHTML = "Your cart is empty.";
+
+                buyNow.setAttribute("disabled", "");
             }
         });
 };
@@ -85,11 +78,11 @@ async function getProduct(productId) {
 
             userCart.innerHTML += `
                         <li class="list-group-item p-0">
-                            <div class="card border-white" style="max-width: 540px;">
+                            <div class="card border-white">
                                 <div class="row">
 
-                                    <div class="col-md-4 pe-0 d-flex align-items-center">
-                                        <img src="${product.image}" class="img-fluid rounded-start p-2" alt="...">
+                                    <div class="col-md-4" style="max-width: 150px">
+                                        <img src="${product.image}" class="img-fluid rounded-start p-2" alt="Product"">
                                     </div>
 
                                     <div class="col-md-8">
@@ -99,7 +92,10 @@ async function getProduct(productId) {
                                             <p class="card-text">${product.price}&euro;</p>
 
                                             <div class="d-flex justify-content-between align-items-end">
-                                                <p class="card-text">Q.ty: 1</p>
+                                                <div class="card-text">
+                                                    Q.ty:
+                                                    <input class="quantity" type="number" value="1" min="1">
+                                                </div>
                                                 <button type="button" class="btn btn-danger" onclick="deleteProd(${productId})">X</button>
                                             </div>
                                         </div>
@@ -110,63 +106,30 @@ async function getProduct(productId) {
                         `
         });
 
-        cartTotal.innerHTML = `Total: ${total} &euro;`;
+    cartTotal.innerHTML = `Total: ${total} &euro;`;
 };
 
-// ADD PRODUCT
-async function addProduct() {
 
-    let cartId = localStorage.getItem("cartId");
-    
-    content.push(productIdentifier);
-
-    var newProduct = {
-        idUser: userId,
-        articles: content
-    };
-
-    let response = await fetch('http://localhost:3000/cart/' + cartId,
-        {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json;charset=utf-8' },
-            body: JSON.stringify(newProduct),
-        }
-    )
-
-    window.location.reload();
-}
 
 // DELETE PRODUCT
-async function deleteProd(id) {
+async function emptyCart() {
 
     let cartId = localStorage.getItem("cartId");
-    var f = 0;
-    var newArray = [];
 
-    for (let i = 0; i < content.length; i++) {
-        if (content[i] == id) {
-            i++;
-        }
-        else {
-            newArray[f] = content[i];
-            f++;
-        }
-    }
-
-    content = newArray;
-
-    var newProduct = {
+    var emptyCartArray = {
         idUser: userId,
-        articles: content
+        articles: []
     };
 
     let response = await fetch('http://localhost:3000/cart/' + cartId,
         {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json;charset=utf-8' },
-            body: JSON.stringify(newProduct)
+            body: JSON.stringify(emptyCartArray)
         }
     )
 
-    window.location.reload();
+    let myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
+
+    myModal.show();
 }

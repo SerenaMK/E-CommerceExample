@@ -28,8 +28,8 @@ if (nameOfUser) {
         </div>
         `);
 } else {
-    userIcon.setAttribute("disabled","");
-    btnCart.setAttribute("disabled","");
+    userIcon.setAttribute("disabled", "");
+    btnCart.setAttribute("disabled", "");
 }
 
 // Enable popover
@@ -93,41 +93,42 @@ async function existence() {
             if (exist) {
                 errUser.innerHTML = "";
                 errUser.innerHTML = "Logged in!";
-                window.location.reload();
+
+                exist = false;
+
+                // CREATE LOCALSTORAGE DATA
+                localStorage.setItem("user", username.value);
+                localStorage.setItem("userId", currentId);
+                localStorage.setItem("nameOfUser", saveName);
+
+                getCartLogin();
+
             } else {
                 errUser.innerHTML = "";
                 errUser.innerHTML = "Username/email or password don't match.";
             };
-
-            exist = false;
-
-            // CREATE LOCALSTORAGE DATA
-            localStorage.setItem("user", username.value);
-            localStorage.setItem("userId", currentId);
-            localStorage.setItem("nameOfUser", saveName);
-
-            getCart2();
         });
 }
 
 // GET USER'S CART
-async function getCart2() {
+async function getCartLogin() {
     let response = await fetch("http://localhost:3000/cart")
         .then((response) => {
             return response.json();
         })
         .then((data) => {
             cartList = data;
-            // idUser = localStorage.getItem("userId");
+            idUser = localStorage.getItem("userId");
 
             cartList.forEach(cart => {
                 if (cart.idUser == idUser) {
-                    // RITORNAMI I PRODOTTI DENTRO AD ARTICLES DEL CARRELLO
                     cartId = cart.id;
                     localStorage.setItem("cartId", cartId);
                 }
             });
         });
+
+        window.location.reload();
 };
 
 // Things that happen whenever one is logged in

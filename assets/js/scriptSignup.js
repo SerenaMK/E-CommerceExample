@@ -49,12 +49,6 @@ function eventHandler() {
         // RICHIAMO VALIDATION
         validation();
     });
-
-    // if (sessionStorage.getItem('registration')) {
-    //         let myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
-    //         myModal.show();
-    //     sessionStorage.removeItem('registration');
-    // }
 }
 
 // FUNCTION VALIDATION

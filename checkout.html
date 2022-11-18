@@ -16,6 +16,7 @@
 </head>
 
 <body>
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
         <div class="container-fluid">
@@ -24,13 +25,14 @@
                 <div class="d-inline">
 
                     <!-- USER ICON -->
-                    <button id="userIcon" type="button" class="btn" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true">
+                    <button id="userIcon" type="button" class="btn" data-bs-container="body" data-bs-toggle="popover"
+                        data-bs-placement="bottom" data-bs-html="true">
                         <div id="btnName" class="d-none d-sm-inline text-light me-2 fw-bold"></div>
                         <i class="bi bi-person-circle text-white"></i>
                     </button>
 
                     <!-- CART ICON -->
-                    <button id="btnCart" type="button" class="btn">
+                    <button id="btnCart" type="button" class="btn disabled">
                         <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#cartOff" href="#cartOff">
                             <i class="bi bi-cart text-white"></i>
                         </a>
@@ -54,8 +56,8 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-info d-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            href="#offcanvas" id="navLogin">Log In</a>
+                        <a class="nav-link text-info d-block" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" href="#offcanvas" id="navLogin">Log In</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-warning d-none" id="navLogout">Log Out</a>
@@ -65,47 +67,80 @@
         </div>
     </nav>
 
-    <!-- OFFCANVAS CART -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOff" aria-labelledby="cartOff">
+    <!-- OFFCANVAS LOGIN -->
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title h2" id="cartOffLabel">Your cart</h5>
+            <h5 class="offcanvas-title">Sign In</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div id="cartScroll">
-            <div class="offcanvas-body">
-                <p id="empty" class="text-secondary ms-3 mb-0 fst-italic fs-5"></p>
+        <div class="offcanvas-body">
+            <form>
+                <label for="username" class="mt-2 fw-semibold">USERNAME</label>
+                <input type="text" class="form-control" id="username" placeholder="Username or your email">
+                <p id="errUser" class="text-success"></p>
+
+                <label for="password" class="mt-2 fw-semibold">PASSWORD</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <p id="errPass" class="text-danger"></p>
+
+                <button type="button" class="btn btn-primary mt-2" id="btnIn">SIGN IN</button>
+            </form>
+            <br>
+            <h3 class="pt-2 text-center">Not registered?</h3>
+            <a class="pt-2 fw-semibold d-flex justify-content-center btn btn-primary " href="signup.html">SIGN UP</a>
+        </div>
+    </div>
+
+    <!-- CART -->
+    <div class="container mt-5 pt-5">
+        <!-- PAGE TITLE -->
+        <div class="row">
+            <div class="col-12">
+                <h1>Checkout</h1>
+            </div>
+        </div>
+
+        <!-- PRINTED CART -->
+        <div class="row">
+            <p id="empty" class="text-secondary ms-3 mb-0 fst-italic fs-5"></p>
+            <div class="col-12">
                 <ul id="cart" class="list-group"></ul>
             </div>
         </div>
-        <p class="text-center fs-4" id="cartTotal"></p>
-        <button type="button" class="btn btn-warning py-3" id="btnCheckout">CHECKOUT</button>
-    </div>
 
-    <!-- CONTAINER -->
-    <div class="container-lg py-5 mt-5">
         <div class="row">
-            <div class="col-12 border-5 border-start border-primary ms-3">
-                <h2>Login</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col p-3 mt-2">
-                <form>
-                    <label for="username" class="mt-2 fw-semibold">USERNAME</label>
-                    <input type="text" class="form-control" id="username"
-                        placeholder="Username or your email">
-                    <p id="errUser" class="text-success"></p>
-
-                    <label for="password" class="mt-2 fw-semibold">PASSWORD</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                    <p id="errPass" class="text-danger"></p>
-
-                    <button type="button" class="btn btn-primary mt-2" id="btnIn">SIGN IN</button>
-                </form>
+            <div class="col-12 d-flex justify-content-end">
+                <div class="d-flex flex-column">
+                    <!-- TOTAL -->
+                    <p class="text-center fs-4" id="cartTotal"></p>
+                    <!-- BUY NOW BUTTON -->
+                    <button type="button" class="btn btn-warning" id="buyNow">BUY NOW</button>
+                </div>
             </div>
         </div>
     </div>
-    
+
+
+    <!-- Vertically centered modal -->
+    <div class="modal" tabindex="-1" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Your order is complete!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>By clicking the button below you will be redirected to the homepage</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="window.location.href='checkout.html'">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='index.html'">Go to
+                        homepage</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer>
@@ -161,8 +196,8 @@
     </footer>
 
     <!-- SCRIPT -->
+    <script src="assets/js/scriptCheckout.js"></script>
     <script src="assets/js/scriptLogin.js"></script>
-    <script src="assets/js/scriptCart.js"></script>
 </body>
 
 </html>

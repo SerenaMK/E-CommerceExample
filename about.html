@@ -98,10 +98,14 @@
             <h5 class="offcanvas-title h2" id="cartOffLabel">Your cart</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
-            <p id="empty" class="text-secondary ms-3 mb-0 fst-italic fs-5"></p>
-            <ul id="cart" class="list-group"></ul>
+        <div id="cartScroll">
+            <div class="offcanvas-body">
+                <p id="empty" class="text-secondary ms-3 mb-0 fst-italic fs-5"></p>
+                <ul id="cart" class="list-group"></ul>
+            </div>
         </div>
+        <p class="text-center fs-4" id="cartTotal"></p>
+        <button type="button" class="btn btn-warning py-3" id="btnCheckout">CHECKOUT</button>
     </div>
 
     <!-- CONTAINER -->
@@ -160,43 +164,51 @@
         <div class="container-fluid mt-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 p-5">
-                        <p class="text-white fw-semibold">SOCIAL</p>
-                        <a href="" class="text-decoration-none">
-                            <i class="bi bi-facebook text-light fs-3 pe-1"></i>
+                    <div class="col-md-3 py-3 py-lg-5 px-2 px-lg-5" id="socials">
+                        <h6 class="text-white fw-semibold">SOCIAL</h6>
+                        <a href="#" class="text-decoration-none">
+                            <i class="bi bi-facebook fs-3 pe-1"></i>
                         </a>
-                        <a href="" class="text-decoration-none">
-                            <i class="bi bi-twitter text-light fs-3 pe-1"></i>
+                        <a href="#" class="text-decoration-none">
+                            <i class="bi bi-twitter fs-3 pe-1"></i>
                         </a>
-                        <a href="" class="text-decoration-none">
-                            <i class="bi bi-linkedin text-light fs-3 pe-1"></i>
+                        <a href="#" class="text-decoration-none">
+                            <i class="bi bi-linkedin fs-3 pe-1"></i>
                         </a>
-                        <a href="" class="text-decoration-none">
-                            <i class="bi bi-instagram text-light fs-3"></i>
+                        <a href="#" class="text-decoration-none">
+                            <i class="bi bi-instagram fs-3"></i>
                         </a>
                     </div>
-                    <div class="col-md-3 p-5">
-                        <p class="text-light fw-semibold">CONTACTS</p>
-                        <a href="" class="text-decoration-none text-light"><i class="bi bi-envelope"></i>
-                            ecommerce@gmail.com</a>
-                        <p class="text-light"><i class="bi bi-telephone-fill"></i> (+39) 3524688510</p>
-
+                    <div class="col-md-3 py-3 py-lg-5 px-2 px-lg-5">
+                        <h6 class="text-light fw-semibold">CONTACTS</h6>
+                        <p>
+                            <a href="mailto:musicstore@gmail.com" class="text-decoration-none text-light">
+                                <i class="bi bi-envelope me-2"></i>
+                                musicstore@gmail.com
+                            </a>
+                        </p>
+                        <p class="text-light">
+                            <i class="bi bi-telephone-fill me-2"></i>
+                            (+39) 3524688510
+                        </p>
                     </div>
-                    <div class="col-md-3 p-5">
-                        <p class="text-light fw-semibold">SUBSCRIBE</p>
-                        <input type="email" id="email" class="form-control" placeholder="Enter your email"><br>
+                    <div class="col-md-3 py-3 py-lg-5 px-2 px-lg-5">
+                        <h6 class="text-light fw-semibold">SUBSCRIBE</h6>
+                        <input type="email" id="email" class="form-control mb-1" placeholder="Enter your email">
                         <button type="button" class="btn btn-primary">Subscribe</button>
                     </div>
-                    <div class="col-md-3 p-5">
-                        <p class="text-light fw-semibold">LAVORA CON NOI</p>
+                    <div class="col-md-3 py-3 py-lg-5 px-2 px-lg-5" id="workWithUs">
+                        <h6 class="text-light fw-semibold">WORK WITH US</h6>
+                        <p class="text-light">Careers</p>
+                        <p class="text-light">Sponsorship program</p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row pb-3 mt-3 mt-lg-0">
                     <div class="col-12">
                         <p class="text-center text-light">&copy; All rights reserved</p>
                     </div>
-                </div>                
-            </div>            
+                </div>
+            </div>
         </div>
     </footer>
 

@@ -97,10 +97,14 @@
             <h5 class="offcanvas-title h2" id="cartOffLabel">Your cart</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
-            <p id="empty" class="text-secondary ms-3 mb-0 fst-italic fs-5"></p>
-            <ul id="cart" class="list-group"></ul>
+        <div id="cartScroll">
+            <div class="offcanvas-body">
+                <p id="empty" class="text-secondary ms-3 mb-0 fst-italic fs-5"></p>
+                <ul id="cart" class="list-group"></ul>
+            </div>
         </div>
+        <p class="text-center fs-4" id="cartTotal"></p>
+        <button type="button" class="btn btn-warning py-3" id="btnCheckout">CHECKOUT</button>
     </div>
 
     <!-- CONTAINER -->

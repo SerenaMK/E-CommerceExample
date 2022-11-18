@@ -4,17 +4,20 @@ var userCart;
 var userId;
 var currentCart = false;
 var content = [];
-var productIdentifier;
 var empty;
 var url = window.location.href;
+var total = 0;
+var cartTotal;
+var checkout;
 
 // ON LOAD
 window.addEventListener("DOMContentLoaded", initCart);
 
 function initCart() {
     userCart = document.getElementById('cart');
-    productIdentifier = Number(url.slice((url.indexOf('=') + 1), url.length));
     empty = document.getElementById("empty");
+    cartTotal = document.getElementById("cartTotal");
+    checkout = document.getElementById("btnCheckout");
 
     eventHandlerCart();
 }
@@ -26,7 +29,12 @@ function eventHandlerCart() {
         userId = Number(localStorage.getItem("userId"));
 
         getCart(userId);
+
+        checkout.addEventListener("click", function() {
+            location.href = "checkout.html";
+        })
     }
+
 }
 
 // GET USER'S CART
@@ -64,12 +72,15 @@ async function getProduct(productId) {
             return response.json();
         })
         .then((product) => {
+
+            total += product.price;
+
             userCart.innerHTML += `
                         <li class="list-group-item p-0">
                             <div class="card border-white" style="max-width: 540px;">
                                 <div class="row">
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 pe-0 d-flex align-items-center">
                                         <img src="${product.image}" class="img-fluid rounded-start p-2" alt="...">
                                     </div>
 
@@ -90,6 +101,8 @@ async function getProduct(productId) {
                         </li>
                         `
         });
+
+        cartTotal.innerHTML = `Total: ${total} &euro;`;
 };
 
 // DELETE PRODUCT
@@ -123,4 +136,6 @@ async function deleteProd(id) {
             body: JSON.stringify(newProduct)
         }
     )
+
+    window.location.reload();
 }

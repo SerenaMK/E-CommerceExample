@@ -32,6 +32,10 @@
     outline-offset: -3px;
 }
 
+#product-img > img {
+    max-height: 600px;
+}
+
 #listCategories {
     list-style-type: circle;
 }
@@ -69,6 +73,15 @@ footer p {
 #workWithUs p {
     line-height: 13px;
 }
+
+#cartScroll {
+    overflow-y: scroll;
+}
+
+.quantity {
+    width: 50px;
+}
+
 
 
 /* MEDIA QUERIES */

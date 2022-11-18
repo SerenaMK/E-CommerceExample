@@ -4,6 +4,7 @@ var productPrice;
 var productDetail;
 var url = window.location.href;
 var currentId;
+var buyNowDetail;
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -14,15 +15,19 @@ function init() {
     productPrice = document.getElementById('product-price');
     productDetail = document.getElementById('product-detail');
     addToCart = document.getElementById('addToCart');
-    buyNow = document.getElementById('buyNow');
+    buyNowDetail = document.getElementById('buyNowDetail');
 
     eventHandlerDetail();
-}
+};
 
 // Event HANDLER
 function eventHandlerDetail() {
     printDetail();
-}
+
+    buyNowDetail.addEventListener("click", function() {
+        location.href = "checkout.html";
+    });
+};
 
 function printDetail() {
     currentId = Number(url.slice((url.indexOf('=') + 1), url.length));
@@ -38,28 +43,3 @@ function printDetail() {
             productDetail.innerHTML = `${data.description}`;
         });
 }
-
-// PUT
-// async function addProduct() {
-
-//     let array = [];
-//     // let obj = {
-//     //     idUser: userId,
-//     //     articles: array.push(currentId)
-//     // }
-
-
-//     let userIdentifier = Number(localStorage.getItem("userId"));
-//     let cartId = localStorage.getItem("cartId");
-
-//     let response = await fetch('http://localhost:3000/cart/' + cartId,
-//         {
-//             method: 'PUT',
-//             headers: { 'Content-Type': 'application/json;charset=utf-8' },
-//             body: JSON.stringify({
-//                 idUser: userIdentifier,
-//                 articles: array.push(currentId)
-//             })
-//         }
-//     )
-// }

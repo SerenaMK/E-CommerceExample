@@ -98,10 +98,14 @@
             <h5 class="offcanvas-title h2" id="cartOffLabel">Your cart</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
-            <p id="empty" class="text-secondary ms-3 mb-0 fst-italic fs-5"></p>
-            <ul id="cart" class="list-group"></ul>
+        <div id="cartScroll">
+            <div class="offcanvas-body">
+                <p id="empty" class="text-secondary ms-3 mb-0 fst-italic fs-5"></p>
+                <ul id="cart" class="list-group"></ul>
+            </div>
         </div>
+        <p class="text-center fs-4" id="cartTotal"></p>
+        <button type="button" class="btn btn-warning py-3" id="btnCheckout">CHECKOUT</button>
     </div>
 
 
@@ -220,16 +224,85 @@
         </div>
     </div>
 
-    <!-- CARDS -->
+    <!-- CATEGORIES -->
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <p class="display-6 mt-4">Our products</p>
+                <p class="display-6 mt-4">Categories</p>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <div class="card-group mt-3" id="cards">
+                <div class="card-group mt-3 flex-wrap" id="categories">
+
+                    <div class="card" onclick="location.href='index.html'">
+                        <div class="text-center">
+                            <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/548645/17480122_800.jpg"
+                                class="card-img-top px-3 pt-3" alt="Guitars">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Guitars</h5>
+                        </div>
+                    </div>
+                    <div class="card" onclick="location.href='index.html'">
+                        <div class="text-center">
+                            <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/536581/16971395_800.jpg"
+                                class="card-img-top px-3 pt-3" alt="Pianos">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Pianos</h5>
+                        </div>
+                    </div>
+                    <div class="card" onclick="location.href='index.html'">
+                        <div class="text-center">
+                            <img src="https://th.static-thomann.de/thumb/padthumb600x600/pics/bdb/137905/9514980_800.jpg"
+                                class="card-img-top px-3 pt-3" alt="Violins">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Violins</h5>
+                        </div>
+                    </div>
+                    <div class="card" onclick="location.href='index.html'">
+                        <div class="text-center">
+                            <img src="https://th.static-thomann.de/thumb/padthumb600x600/pics/bdb/496064/15776950_800.jpg"
+                                class="card-img-top px-3 pt-3" alt="Drums">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Drums</h5>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="display-6 mt-4">Our best selling products</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card-group mt-3 flex-wrap" id="cards">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="display-6 mt-4">Testimonials</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mt-3 flex-wrap" id="cards">
+                    INSERT TESTIMONIAL
                 </div>
             </div>
         </div>
