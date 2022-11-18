@@ -1,9 +1,16 @@
 #banner{
     background-image: url('https://images.unsplash.com/photo-1580152317379-422c5221755e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80');
     opacity: 0.9;
-    height: 500px;
+    height: 300px;
     background-size: cover;
     background-position: center;
+}
+
+.card {
+    cursor: pointer;
+}
+.offcanvas-body .card {
+    cursor:auto;
 }
 
 #productCards > .card {
@@ -15,11 +22,26 @@
     list-style-type: circle;
 }
 
+.carousel-inner .img-fluid {
+    max-width: 70%;
+    height: auto;
+}
+
+#carouselPromo img {
+    width: 60%;
+    max-width: 350px;
+}
+
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 576px) {
     #productCards > .card {
         width: 33%;
+    }
+
+    #carouselPromo img {
+        width: 25%;
+        max-width: 350px;
     }
 }
 @media screen and (min-width: 992px) {

@@ -23,9 +23,10 @@ function printData() {
                 list.map(function (element) {
                     cards.innerHTML += `
                     <div class="card border border-white" onclick="location.href='detail.html?id=${element.id}'">
-                        <img src="${element.image}" class="card-img-top p-2">
-                        <div class="card-body">
+                        <img src="${element.image}" class="card-img-top px-3 pt-3">
+                        <div class="card-body text-center">
                             <h5 class="card-title">${element.title}</h5>
+                            <p class="fs-5">${element.price}&euro;</p>
                         </div>
                     </div>`
                 });

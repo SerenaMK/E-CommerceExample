@@ -21,12 +21,14 @@ function printData() {
             if (list.length > 0) {
                 cards.innerHTML = '';
                 list.map(function (element) {
-                    cards.innerHTML += `<div class="card" onclick="location.href='detail.html?id=${element.id}'">
-                    <img src="${element.image}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">${element.title}</h5>
-                    </div>
-                </div>`
+                    cards.innerHTML += `
+                    <div class="card" onclick="location.href='detail.html?id=${element.id}'">
+                        <img src="${element.image}" class="card-img-top px-3 pt-3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${element.title}</h5>
+                            <p class="fs-5">${element.price}&euro;</p>
+                        </div>
+                    </div>`
                 });
             }
         });
