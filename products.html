@@ -18,7 +18,7 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand order-lg-1" href="index.html">Music Store</a>
             <div class="d-lg-flex justify-content-end order-lg-3">
@@ -49,10 +49,10 @@
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="products.html">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-info d-block" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -121,6 +121,14 @@
                             <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="radioPianos">
                             <label class="form-check-label" for="radioPianos">Pianos</label>
                         </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="radioPianos">
+                            <label class="form-check-label" for="radioPianos">Violins</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="radioPianos">
+                            <label class="form-check-label" for="radioPianos">Drums</label>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -135,8 +143,48 @@
     
 
     <!-- FOOTER -->
-    <footer class="h-25 bg-dark text-white p-3 mt-5 text-center">
-        <p>FOOTER</p>
+    <footer>
+        <div class="container-fluid mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 p-5">
+                        <p class="text-white fw-semibold">SOCIAL</p>
+                        <a href="" class="text-decoration-none">
+                            <i class="bi bi-facebook text-light fs-3 pe-1"></i>
+                        </a>
+                        <a href="" class="text-decoration-none">
+                            <i class="bi bi-twitter text-light fs-3 pe-1"></i>
+                        </a>
+                        <a href="" class="text-decoration-none">
+                            <i class="bi bi-linkedin text-light fs-3 pe-1"></i>
+                        </a>
+                        <a href="" class="text-decoration-none">
+                            <i class="bi bi-instagram text-light fs-3"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-3 p-5">
+                        <p class="text-light fw-semibold">CONTACTS</p>
+                        <a href="" class="text-decoration-none text-light"><i class="bi bi-envelope"></i>
+                            ecommerce@gmail.com</a>
+                        <p class="text-light"><i class="bi bi-telephone-fill"></i> (+39) 3524688510</p>
+
+                    </div>
+                    <div class="col-md-3 p-5">
+                        <p class="text-light fw-semibold">SUBSCRIBE</p>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email"><br>
+                        <button type="button" class="btn btn-primary">Subscribe</button>
+                    </div>
+                    <div class="col-md-3 p-5">
+                        <p class="text-light fw-semibold">LAVORA CON NOI</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="text-center text-light">&copy; All rights reserved</p>
+                    </div>
+                </div>                
+            </div>            
+        </div>
     </footer>
 
     <!-- SCRIPT -->

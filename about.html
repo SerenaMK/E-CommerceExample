@@ -12,9 +12,11 @@
         integrity='sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3'
         crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
         <div class="container-fluid">
@@ -23,7 +25,8 @@
                 <div class="d-inline">
 
                     <!-- USER ICON -->
-                    <button id="userIcon" type="button" class="btn" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true">
+                    <button id="userIcon" type="button" class="btn" data-bs-container="body" data-bs-toggle="popover"
+                        data-bs-placement="bottom" data-bs-html="true">
                         <div id="btnName" class="d-none d-sm-inline text-light me-2 fw-bold"></div>
                         <i class="bi bi-person-circle text-white"></i>
                     </button>
@@ -53,8 +56,8 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-info d-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            href="#offcanvas" id="navLogin">Log In</a>
+                        <a class="nav-link text-info d-block" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" href="#offcanvas" id="navLogin">Log In</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-warning d-none" id="navLogout">Log Out</a>
@@ -63,6 +66,31 @@
             </div>
         </div>
     </nav>
+
+    <!-- OFFCANVAS LOGIN -->
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Sign In</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form>
+                <label for="username" class="mt-2 fw-semibold">USERNAME</label>
+                <input type="text" class="form-control" id="username" placeholder="Username or your email">
+                <p id="errUser" class="text-success"></p>
+
+                <label for="password" class="mt-2 fw-semibold">PASSWORD</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <p id="errPass" class="text-danger"></p>
+
+                <button type="button" class="btn btn-primary mt-2" id="btnIn">SIGN IN</button>
+            </form>
+            <br>
+            <h3 class="pt-2 text-center">Not registered?</h3>
+            <a class="pt-2 fw-semibold d-flex justify-content-center btn btn-primary " href="signup.html">SIGN UP</a>
+        </div>
+    </div>
 
     <!-- OFFCANVAS CART -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOff" aria-labelledby="cartOff">
@@ -77,30 +105,55 @@
     </div>
 
     <!-- CONTAINER -->
-    <div class="container-lg py-5 mt-5">
-        <div class="row">
-            <div class="col-12 border-5 border-start border-primary ms-3">
-                <h2>Login</h2>
+    <div class="container mt-5 pt-5">
+        <h1 class="p-2">PRODOTTI ESCLUSIVI</h1>
+        <p class="p-2">Dal 1985 importiamo prodotti direttamente dai produttori, offrendo ai nostri clienti i migliori
+            prezzi sul
+            mercato. Grazie a questa nostra lunga esperienza, selezioniamo soltanto i migliori produttori garantendo
+            prodotti di qualità ad ottimi prezzi.</p>
+        <div class="container d-flex flex-wrap pt-3">
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://loghi-famosi.com/wp-content/uploads/2021/02/Ibanez-Logo-650x366.png"
+                    class="img-fluid p-2" alt="ibanez">
+
             </div>
-        </div>
-        <div class="row">
-            <div class="col p-3 mt-2">
-                <form>
-                    <label for="username" class="mt-2 fw-semibold">USERNAME</label>
-                    <input type="text" class="form-control" id="username"
-                        placeholder="Username or your email">
-                    <p id="errUser" class="text-success"></p>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://1000marche.net/wp-content/uploads/2020/11/Yamaha-Logo-1967.png" class="img-fluid p-2"
+                    alt="yamaha">
 
-                    <label for="password" class="mt-2 fw-semibold">PASSWORD</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                    <p id="errPass" class="text-danger"></p>
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://1000marche.net/wp-content/uploads/2021/11/Fender-Logo-500x313.png"
+                    class="img-fluid p-2" alt="fender">
 
-                    <button type="button" class="btn btn-primary mt-2" id="btnIn">SIGN IN</button>
-                </form>
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://loghi-famosi.com/wp-content/uploads/2021/02/Gibson-Logo-650x366.png"
+                    class="img-fluid p-2" alt="gibson">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Jackson_guitars_logo.svg/300px-Jackson_guitars_logo.svg.png"
+                    class="img-fluid pt-3 p-2" alt="jackson">
+
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://www.thomann.de/thumb/opengraphnb/pics/herstlogos/gretsch.gif" class="img-fluid p-2"
+                    alt="gretsch">
+
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://www.sanremorock.it/wp-content/uploads/2019/04/logo-eko-est1959.png"
+                    class="img-fluid p-2" alt="eko">
+
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Takamine_guitar_logo.svg/300px-Takamine_guitar_logo.svg.png"
+                    class="img-fluid pt-4 p-2" alt="takamine">
+
             </div>
         </div>
     </div>
-    
+
 
     <!-- FOOTER -->
     <footer>
@@ -148,6 +201,7 @@
     </footer>
 
     <!-- SCRIPT -->
+    <script src="assets/js/scriptIndex.js"></script>
     <script src="assets/js/scriptLogin.js"></script>
     <script src="assets/js/scriptCart.js"></script>
 </body>

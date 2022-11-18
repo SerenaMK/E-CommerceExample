@@ -6,11 +6,25 @@
     background-position: center;
 }
 
+#textBanner {
+    color: #FF2C40;
+}
+
 .card {
     cursor: pointer;
 }
 .offcanvas-body .card {
     cursor:auto;
+}
+
+.card-img-top {
+    max-height: 200px;
+    max-width: 100%;
+    width: fit-content;
+}
+
+.cardText {
+    height: 130px;
 }
 
 #productCards > .card {
@@ -30,6 +44,30 @@
 #carouselPromo img {
     width: 60%;
     max-width: 350px;
+}
+
+.navbar, footer {
+    background-color: #191919;
+}
+
+#socials i {
+    color: #F8F9FA;
+}
+
+#socials i:hover {
+    color: #FF2C40;
+}
+
+footer h6 {
+    margin-bottom: 20px;
+}
+
+footer p {
+    line-height: 5px;
+}
+
+#workWithUs p {
+    line-height: 13px;
 }
 
 
