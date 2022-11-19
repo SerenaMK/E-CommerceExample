@@ -4,7 +4,6 @@ var productPrice;
 var productDetail;
 var url = window.location.href;
 var currentId;
-var buyNowDetail;
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -15,7 +14,6 @@ function init() {
     productPrice = document.getElementById('product-price');
     productDetail = document.getElementById('product-detail');
     addToCart = document.getElementById('addToCart');
-    buyNowDetail = document.getElementById('buyNowDetail');
 
     eventHandlerDetail();
 };
@@ -23,10 +21,6 @@ function init() {
 // Event HANDLER
 function eventHandlerDetail() {
     printDetail();
-
-    buyNowDetail.addEventListener("click", function() {
-        location.href = "checkout.html";
-    });
 };
 
 function printDetail() {

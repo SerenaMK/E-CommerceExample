@@ -10,8 +10,9 @@ var url = window.location.href;
 var total = 0;
 var cartTotal;
 var addToCart;
-var buyNow;
 var checkout;
+var buyNowDetail;
+var refresh = true;
 
 // ON LOAD
 window.addEventListener("DOMContentLoaded", initCart);
@@ -22,6 +23,7 @@ function initCart() {
     empty = document.getElementById("empty");
     cartTotal = document.getElementById("cartTotal");
     checkout = document.getElementById("btnCheckout");
+    buyNowDetail = document.getElementById('buyNowDetail');
 
     eventHandlerCart();
 }
@@ -38,7 +40,12 @@ function eventHandlerCart() {
             addProduct();
         });
 
-        checkout.addEventListener("click", function() {
+        buyNowDetail.addEventListener("click", function () {
+            refresh = false;
+            addProduct();
+        });
+
+        checkout.addEventListener("click", function () {
             location.href = "checkout.html";
         })
     }
@@ -110,14 +117,14 @@ async function getProduct(productId) {
                         `
         });
 
-        cartTotal.innerHTML = `Total: ${total} &euro;`;
+    cartTotal.innerHTML = `Total: ${total} &euro;`;
 };
 
 // ADD PRODUCT
 async function addProduct() {
 
     let cartId = localStorage.getItem("cartId");
-    
+
     content.push(productIdentifier);
 
     var newProduct = {
@@ -133,7 +140,11 @@ async function addProduct() {
         }
     )
 
-    window.location.reload();
+    if (refresh) {
+        window.location.reload();
+    } else {
+        location.href = "checkout.html";
+    };
 }
 
 // DELETE PRODUCT
