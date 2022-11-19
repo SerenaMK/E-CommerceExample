@@ -1,5 +1,5 @@
 {
-  "name": "build-week-2-e-commerce",
+  "name": "build_week2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gerdiley/Build-week-2-E-commerce.git"
+    "url": "git+https://github.com/SerenaMK/BUILD_WEEK2.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gerdiley/Build-week-2-E-commerce/issues"
+    "url": "https://github.com/SerenaMK/BUILD_WEEK2/issues"
   },
-  "homepage": "https://github.com/gerdiley/Build-week-2-E-commerce#readme",
+  "homepage": "https://github.com/SerenaMK/BUILD_WEEK2#readme",
   "dependencies": {
     "json-server": "^0.17.1"
   }
