@@ -14,7 +14,7 @@
     cursor: pointer;
 }
 
-.offcanvas-body .card {
+.offcanvas-body .card, #cart .card {
     cursor: auto;
 }
 

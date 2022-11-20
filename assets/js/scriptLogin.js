@@ -19,7 +19,7 @@ var nameOfUser = localStorage.getItem("nameOfUser");
 if (nameOfUser) {
     const userIcon = document.getElementById("userIcon");
     userIcon.setAttribute("data-bs-content", `
-        <p class="text-center fs-5 mb-2"><b>Hello, ${localStorage.getItem("nameOfUser")}</b><br></p>
+        <p class="text-center fs-5 mb-2"><b>Hello, <span>${localStorage.getItem("nameOfUser")}</span></b><br></p>
         <div class="list-group list-group-flush">
             <a href="#" class="list-group-item list-group-item-action ps-2 fs-6 text-decoration-none        text-dark">Order history</a>
             <a href="#" class="list-group-item list-group-item-action ps-2 fs-6 text-decoration-none        text-dark">Wishlist</a>
