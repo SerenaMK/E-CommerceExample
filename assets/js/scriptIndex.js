@@ -20,6 +20,11 @@ function printData() {
             list = data;
             if (list.length > 0) {
                 cards.innerHTML = '';
+                
+                // Show only the first 6 products on the list
+                let list2 = list.slice(1, 7);
+                list = list2;
+
                 list.map(function (element) {
                     cards.innerHTML += `
                     <div class="card" onclick="location.href='detail.html?id=${element.id}'">
