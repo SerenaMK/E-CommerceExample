@@ -82,6 +82,14 @@ footer p {
     width: 50px;
 }
 
+figure > img {
+    width: 5em;
+}
+
+blockquote {
+    font-style: italic;
+}
+
 
 
 /* MEDIA QUERIES */

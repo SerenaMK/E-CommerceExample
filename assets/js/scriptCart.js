@@ -112,9 +112,11 @@ async function deleteProd(id) {
     var f = 0;
     var newArray = [];
 
+    console.log(content);
+
     for (let i = 0; i < content.length; i++) {
         if (content[i] == id) {
-            i++;
+            i;
         }
         else {
             newArray[f] = content[i];
@@ -122,7 +124,11 @@ async function deleteProd(id) {
         }
     }
 
+    console.log(content);
+
     content = newArray;
+
+    console.log(content);
 
     var newProduct = {
         idUser: userId,

@@ -26,7 +26,7 @@
 
                     <!-- USER ICON -->
                     <button id="userIcon" type="button" class="btn" data-bs-container="body" data-bs-toggle="popover"
-                        data-bs-placement="bottom" data-bs-html="true">
+                        data-bs-trigger="focus" data-bs-placement="bottom" data-bs-html="true">
                         <div id="btnName" class="d-none d-sm-inline text-light me-2 fw-bold"></div>
                         <i class="bi bi-person-circle text-white"></i>
                     </button>
@@ -50,7 +50,7 @@
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="products.html">Products</a>
+                        <a class="nav-link" href="products.html?cat=0">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -134,7 +134,8 @@
                     <p>By clicking the button below you will be redirected to the homepage</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="window.location.href='checkout.html'">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        onclick="window.location.href='checkout.html'">Close</button>
                     <button type="button" class="btn btn-primary" onclick="window.location.href='index.html'">Go to
                         homepage</button>
                 </div>
