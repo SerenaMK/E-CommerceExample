@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce</title>
+    <title>Checkout - Music Store</title>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet'
         integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous'>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js'
@@ -95,7 +95,7 @@
     <!-- CART -->
     <div class="container mt-5 pt-5">
         <!-- PAGE TITLE -->
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-12">
                 <h1>Checkout</h1>
             </div>
@@ -113,7 +113,7 @@
             <div class="col-12 d-flex justify-content-end">
                 <div class="d-flex flex-column">
                     <!-- TOTAL -->
-                    <p class="text-center fs-4" id="cartTotal"></p>
+                    <p class="text-center fs-3 mt-3" id="cartTotal"></p>
                     <!-- BUY NOW BUTTON -->
                     <button type="button" class="btn btn-warning" id="buyNow">BUY NOW</button>
                 </div>
@@ -166,25 +166,27 @@
                     <div class="col-md-3 py-3 py-lg-5 px-2 px-lg-5">
                         <h6 class="text-light fw-semibold">CONTACTS</h6>
                         <p>
-                            <a href="mailto:musicstore@gmail.com" class="text-decoration-none text-light">
+                            <a href="mailto:musicstore@gmail.com" class="text-decoration-none">
                                 <i class="bi bi-envelope me-2"></i>
                                 musicstore@gmail.com
                             </a>
                         </p>
-                        <p class="text-light">
-                            <i class="bi bi-telephone-fill me-2"></i>
-                            (+39) 3524688510
+                        <p>
+                            <a href="tel:+393524688510" class="text-decoration-none">
+                                <i class="bi bi-telephone-fill me-2"></i>
+                                (+39) 3524688510
+                            </a>
                         </p>
                     </div>
                     <div class="col-md-3 py-3 py-lg-5 px-2 px-lg-5">
                         <h6 class="text-light fw-semibold">SUBSCRIBE</h6>
                         <input type="email" id="email" class="form-control mb-1" placeholder="Enter your email">
-                        <button type="button" class="btn btn-primary">Subscribe</button>
+                        <button type="button" class="btn btn-danger">Subscribe</button>
                     </div>
                     <div class="col-md-3 py-3 py-lg-5 px-2 px-lg-5" id="workWithUs">
                         <h6 class="text-light fw-semibold">WORK WITH US</h6>
-                        <p class="text-light">Careers</p>
-                        <p class="text-light">Sponsorship program</p>
+                        <p class="text-light"><a href="#" class="text-decoration-none">Careers</a></p>
+                        <p class="text-light"><a href="#" class="text-decoration-none">Sponsorship program</a></p>
                     </div>
                 </div>
                 <div class="row pb-3 mt-3 mt-lg-0">

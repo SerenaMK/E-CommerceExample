@@ -69,11 +69,13 @@ function printData() {
                     cards.innerHTML += `
                     <div class="card border border-white align-content-between">
                         <div class="text-center"><img src="${element.image}" class="card-img-top px-3 pt-3" onclick="location.href='detail.html?id=${element.id}'"></div>
-                        <div class="card-body text-center d-flex flex-column justify-content-end cardText">
-                            <h5 class="card-title" onclick="location.href='detail.html?id=${element.id}'">${element.title}</h5>
-                            <p class="fs-5">${element.price}&euro;</p>
+                        <div class="card-body text-center d-flex flex-column justify-content-between cardText pb-0">
+                            <h5 class="card-title mb-0" onclick="location.href='detail.html?id=${element.id}'">${element.title}</h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="fs-4 text-start">${element.price}&euro;</p>
+                                <button type="button" class="add btn btn-warning ms-2 mb-2 fs-5" onclick="addProd(${element.id})"><i class="bi bi-cart-plus"></i></button>
+                            </div>
                         </div>
-                        <div><button type="button" class="btn btn-warning" onclick="addProd(${element.id})">Add to Cart</button></div>
                     </div>`
                 }
             });
@@ -81,10 +83,10 @@ function printData() {
 }
 
 async function addProd(product) {
-
     var uID = Number(localStorage.getItem('userId'));
     var cID = Number(localStorage.getItem('cartId'));
-    fetch("http://localhost:3000/cart/")
+
+    let response = await fetch("http://localhost:3000/cart/")
         .then((response) => {
             return response.json();
         })
@@ -107,20 +109,16 @@ async function addProd(product) {
 
                 }
             });
-
-
+        })
+        .then(() => {
+            reload();
         });
-
-
-
-
-
-}
+};
 
 async function updateCart(cart, cID) {
     let response = await fetch("http://localhost:3000/cart/" + cID, {
         method: "PUT",
         headers: { 'Content-Type': 'application/json;charset=utf-8' },
         body: JSON.stringify(cart),
-    })
-}
+    });
+};
